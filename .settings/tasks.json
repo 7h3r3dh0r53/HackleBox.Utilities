@@ -145,8 +145,9 @@
     "args": [
         "-debug",
 		"-v",
-		"-OUT:${workspaceRoot}/bin/Debug/Program.exe",
-		"*.cs"
+		"-target:library",
+		"-OUT:${workspaceRoot}/bin/Debug/HackleBox.Utilities.dll",
+		"**/*.cs"
     ],  
     "showOutput": "silent",
     "taskSelector": "/t:",
@@ -158,6 +159,26 @@
         }
     ]
 }
+
+// {
+// 	"version": "0.1.0",
+//     "command": "git",
+//     "args": [
+// 		"push",
+// 		"https://7h3r3dh0r53@github.com/7h3r3dh0r53/HackleBox.Utilities",
+// 		"master"
+//     ],  
+//     "showOutput": "silent",
+//     "taskSelector": "/t:",
+//     "tasks": [
+//         {
+//             "taskName": "build_debug",
+//             "isBuildCommand": true,
+//             "problemMatcher": "$msCompile"
+//         }
+//     ]
+// }
+//
 //
 
 // Uncomment the following section to use msbuild which compiles Typescript
