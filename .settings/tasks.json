@@ -8,25 +8,25 @@
 
 // A task runner that calls the Typescipt compiler (tsc) and 
 // Compiles a HelloWorld.ts program
-{
-	"version": "0.1.0",
+// {
+// 	"version": "0.1.0",
 	
-	// The command is tsc. Assumes that tsc has been installed using npm install -g typescript
-	"command": "tsc",
+// 	// The command is tsc. Assumes that tsc has been installed using npm install -g typescript
+// 	"command": "tsc",
 	
-	// The command is a shell script
-	"isShellCommand": true,
+// 	// The command is a shell script
+// 	"isShellCommand": true,
 
-	// Show the output window only if unrecognized errors occur. 
-	"showOutput": "silent",
+// 	// Show the output window only if unrecognized errors occur. 
+// 	"showOutput": "silent",
 	
-	// args is the HelloWorld program to compile.
-	"args": ["HelloWorld.ts"],
+// 	// args is the HelloWorld program to compile.
+// 	"args": ["HelloWorld.ts"],
 	
-	// use the standard tsc problem matcher to find compile problems
-	// in the output.
-	"problemMatcher": "$tsc"
-}
+// 	// use the standard tsc problem matcher to find compile problems
+// 	// in the output.
+// 	"problemMatcher": "$tsc"
+// }
 
 // A task runner that calls the Typescipt compiler (tsc) and 
 // compiles based on a tsconfig.json file that is present in
@@ -138,28 +138,27 @@
 // for csc, cpp, tsc and vb. The configuration assumes that msbuild
 // is available on the path and a solution file exists in the 
 // workspace folder root.
-/*
+//
 {
 	"version": "0.1.0",
-	"command": "msbuild",
-	"args": [
-		// Ask msbuild to generate full paths for file names.
-		"/property:GenerateFullPaths=true"
-	],
-	"taskSelector": "/t:",
-	"showOutput": "silent",
-	"tasks": [
-		{
-			"taskName": "build",
-			// Show the output window only if unrecognized errors occur.
-			"showOutput": "silent",
-			// Use the standard MS compiler pattern to detect errors, warnings
-			// and infos in the output.
-			"problemMatcher": "$msCompile"
-		}
-	]
+    "command": "mcs",
+    "args": [
+        "-debug",
+		"-v",
+		"-OUT:${workspaceRoot}/bin/Debug/Program.exe",
+		"*.cs"
+    ],  
+    "showOutput": "silent",
+    "taskSelector": "/t:",
+    "tasks": [
+        {
+            "taskName": "build_debug",
+            "isBuildCommand": true,
+            "problemMatcher": "$msCompile"
+        }
+    ]
 }
-*/
+//
 
 // Uncomment the following section to use msbuild which compiles Typescript
 // and less files.
