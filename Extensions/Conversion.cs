@@ -1,8 +1,7 @@
 namespace HackleBox.Utilities
 {
     public static class Conversion
-    {
-        
+    {        
         public static int AsIntOrDefault(this string s, int Default = 0)
         {
             return (int)s.AsIntOrNull(Default);
